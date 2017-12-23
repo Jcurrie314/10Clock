@@ -418,9 +418,7 @@ open class TenClock : UIControl{
         strokeColor = disabledFormattedColor(tintColor)
     }
 	
-	public init() {
-		super.init()
-	}
+
 
     override public init(frame: CGRect) {
         super.init(frame:frame)
@@ -557,5 +555,7 @@ open class TenClock : UIControl{
         
 
     }
+	
+
 
 }
