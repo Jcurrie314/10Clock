@@ -417,6 +417,9 @@ open class TenClock : UIControl{
         update()
         strokeColor = disabledFormattedColor(tintColor)
     }
+	
+	public init() {}
+
     override public init(frame: CGRect) {
         super.init(frame:frame)
 //        self.addConstraint(NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: self	, attribute: .Height, multiplier: 1, constant: 0))
