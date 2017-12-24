@@ -32,7 +32,7 @@ open class TenClock : UIControl{
     //overall inset. Controls all sizes.
     @IBInspectable var insetAmount: CGFloat = 40
     var internalShift: CGFloat = 5;
-    var pathWidth:CGFloat = 54
+    open var pathWidth:CGFloat = 54
 
     var timeStepSize: CGFloat = 5
     let gradientLayer = CAGradientLayer()
