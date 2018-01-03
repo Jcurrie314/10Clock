@@ -366,7 +366,7 @@ open class TenClock : UIControl{
             fiveMinIncrements += (24 * (60/5))
         }
         
-        titleTextLayer.string = "\(fiveMinIncrements / 12)hr \((fiveMinIncrements % 12) * 5)min"
+//        titleTextLayer.string = "\(fiveMinIncrements / 12)hr \((fiveMinIncrements % 12) * 5)min"
         titleTextLayer.position = gradientLayer.center
 
     }
