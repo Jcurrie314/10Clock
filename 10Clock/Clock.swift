@@ -239,7 +239,7 @@ open class TenClock : UIControl{
         updateHeadTailLayers()
         updateWatchFaceTicks()
         updateWatchFaceNumerals()
-//        updateWatchFaceTitle()
+        updateWatchFaceTitle()
         CATransaction.commit()
 
     }
