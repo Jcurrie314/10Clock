@@ -247,7 +247,7 @@ open class TenClock : UIControl{
 
         gradientLayer.colors =
             [tintColor,
-                tintColor.modified(withAdditionalHue: -0.08, additionalSaturation: 0.15, additionalBrightness: 0.2)]
+                tintColor.modified(withAdditionalHue: 0, additionalSaturation: 0.05, additionalBrightness: 0.1)]
                 .map(disabledFormattedColor)
                 .map{$0.cgColor}
         gradientLayer.mask = overallPathLayer
