@@ -43,7 +43,7 @@ open class TenClock : UIControl{
     let topHeadLayer = CAShapeLayer()
     let topTailLayer = CAShapeLayer()
     let numeralsLayer = CALayer()
-    open let titleTextLayer = CATextLayer()
+	let titleTextLayer = CATextLayer()
     let overallPathLayer = CALayer()
     let repLayer:CAReplicatorLayer = {
         var r = CAReplicatorLayer()
@@ -366,7 +366,7 @@ open class TenClock : UIControl{
             fiveMinIncrements += (24 * (60/5))
         }
         
-//        titleTextLayer.string = "\(fiveMinIncrements / 12)hr \((fiveMinIncrements % 12) * 5)min"
+        titleTextLayer.string = "\(fiveMinIncrements / 12)hr \((fiveMinIncrements % 12) * 5)min"
         titleTextLayer.position = gradientLayer.center
 
     }
