@@ -43,7 +43,7 @@ open class TenClock : UIControl{
     let topHeadLayer = CAShapeLayer()
     let topTailLayer = CAShapeLayer()
     let numeralsLayer = CALayer()
-	open let titleTextLayer = CATextLayer()
+	open let titleTextLayer = UILabel()
     let overallPathLayer = CALayer()
     let repLayer:CAReplicatorLayer = {
         var r = CAReplicatorLayer()
@@ -239,7 +239,6 @@ open class TenClock : UIControl{
         updateHeadTailLayers()
         updateWatchFaceTicks()
         updateWatchFaceNumerals()
-//        updateWatchFaceTitle()
         CATransaction.commit()
 
     }
@@ -348,28 +347,7 @@ open class TenClock : UIControl{
             numeralsLayer.addSublayer(l)
         }
     }
-    func updateWatchFaceTitle(){
-        let f = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title1)
-        let cgFont = CTFontCreateWithName(f.fontName as CFString?, f.pointSize/2,nil)
-//        let titleTextLayer = CATextLayer()
-        titleTextLayer.bounds.size = CGSize( width: titleTextInset.size.width, height: 50)
-        titleTextLayer.fontSize = f.pointSize
-        titleTextLayer.alignmentMode = kCAAlignmentCenter
-        titleTextLayer.foregroundColor = disabledFormattedColor(centerTextColor ?? tintColor).cgColor
-        titleTextLayer.contentsScale = UIScreen.main.scale
-        titleTextLayer.font = cgFont
-        //var computedTailAngle = tailAngle //+ (headAngle > tailAngle ? twoPi : 0)
-        //computedTailAngle +=  (headAngle > computedTailAngle ? twoPi : 0)
-        var fiveMinIncrements = Int( ((tailAngle - headAngle) / twoPi) * 12 /*hrs*/ * 12 /*5min increments*/)
-        if fiveMinIncrements < 0 {
-            print("tenClock:Err: is negative")
-            fiveMinIncrements += (24 * (60/5))
-        }
-        
-        titleTextLayer.string = "\(fiveMinIncrements / 12)hr \((fiveMinIncrements % 12) * 5)min"
-        titleTextLayer.position = gradientLayer.center
-
-    }
+	
     func tick() -> CAShapeLayer{
         let tick = CAShapeLayer()
         let path = UIBezierPath()
@@ -409,7 +387,7 @@ open class TenClock : UIControl{
         overallPathLayer.addSublayer(pathLayer)
         overallPathLayer.addSublayer(headLayer)
         overallPathLayer.addSublayer(tailLayer)
-        overallPathLayer.addSublayer(titleTextLayer)
+        overallPathLayer.addSublayer(titleTextLayer.layer)
         layer.addSublayer(overallPathLayer)
         layer.addSublayer(gradientLayer)
         gradientLayer.addSublayer(topHeadLayer)
