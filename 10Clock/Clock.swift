@@ -328,7 +328,7 @@ open class TenClock : UIControl{
 
     func updateWatchFaceNumerals() {
         numeralsLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
-        let f = UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption2)
+        let f = UIFont.systemFont(ofSize: 11.0)
         let cgFont = CTFontCreateWithName(f.fontName as CFString?, f.pointSize/2,nil)
         let startPos = CGPoint(x: numeralsLayer.bounds.midX, y: 15)
         let origin = numeralsLayer.center
