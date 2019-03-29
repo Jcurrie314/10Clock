@@ -282,7 +282,7 @@ open class TenClock : UIControl{
 
     func tlabel(_ str:String, color:UIColor? = nil) -> CATextLayer{
         let f = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
-        let cgFont = CTFontCreateWithName(f.fontName as CFString?, f.pointSize/2,nil)
+        let cgFont = CTFontCreateWithName(f.fontName as CFString? ?? "HelveticaNeue" as CFString, f.pointSize/2,nil)
         let l = CATextLayer()
         l.bounds.size = CGSize(width: 30, height: 15)
         l.fontSize = f.pointSize
@@ -329,7 +329,7 @@ open class TenClock : UIControl{
     func updateWatchFaceNumerals() {
         numeralsLayer.sublayers?.forEach({$0.removeFromSuperlayer()})
         let f = UIFont.systemFont(ofSize: 11.0)
-        let cgFont = CTFontCreateWithName(f.fontName as CFString?, f.pointSize/2,nil)
+        let cgFont = CTFontCreateWithName(f.fontName as CFString? ?? "HelveticaNeue" as CFString, f.pointSize/2,nil)
         let startPos = CGPoint(x: numeralsLayer.bounds.midX, y: 15)
         let origin = numeralsLayer.center
         let step = (2 * M_PI) / 12
