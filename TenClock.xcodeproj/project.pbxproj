@@ -249,7 +249,7 @@
 				TargetAttributes = {
 					D8B0402C1D7F2BB200B11B6A = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 					};
 					D8B040451D7F6BDF00B11B6A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -391,7 +391,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "JD.-0Clock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -412,7 +413,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "JD.-0Clock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

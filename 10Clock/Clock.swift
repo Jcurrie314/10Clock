@@ -281,13 +281,13 @@ open class TenClock : UIControl{
 
 
     func tlabel(_ str:String, color:UIColor? = nil) -> CATextLayer{
-        let f = UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption2)
+        let f = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
         let cgFont = CTFontCreateWithName(f.fontName as CFString?, f.pointSize/2,nil)
         let l = CATextLayer()
         l.bounds.size = CGSize(width: 30, height: 15)
         l.fontSize = f.pointSize
         l.foregroundColor =  disabledFormattedColor(color ?? tintColor).cgColor
-        l.alignmentMode = kCAAlignmentCenter
+        l.alignmentMode = CATextLayerAlignmentMode.center
         l.contentsScale = UIScreen.main.scale
         l.font = cgFont
         l.string = str
@@ -337,7 +337,7 @@ open class TenClock : UIControl{
             let l = CATextLayer()
             l.bounds.size = CGSize(width: i > 9 ? 18 : 8, height: 15)
             l.fontSize = f.pointSize
-            l.alignmentMode = kCAAlignmentCenter
+            l.alignmentMode = CATextLayerAlignmentMode.center
             l.contentsScale = UIScreen.main.scale
             //            l.foregroundColor
             l.font = cgFont
